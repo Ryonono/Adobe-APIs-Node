@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "Bodea Brochure",
+    "pic": "/images/Image01.png",
+    "pdf": "https://documentcloud.adobe.com/view-sdk-demo/PDFs/Bodea%20Brochure.pdf",
+    "fileName": "Bodea%20Brochure.pdf"
+  },
+  {
+    "id": 2,
+    "title": "Bodea Survey",
+    "pic": "/images/Image02.png",
+    "pdf": "https://documentcloud.adobe.com/view-sdk-demo/PDFs/Bodea%20Survey.pdf",
+    "fileName": "Bodea%20Survey.pdf"
+  },
+  {
+    "id": 3,
+    "title": "Overview",
+    "pic": "/images/Image03.png",
+    "pdf": "https://documentcloud.adobe.com/view-sdk-demo/PDFs/Overview.pdf",
+    "fileName": "Overview.pdf"
+  },
+  {
+    "id": 4,
+    "title": "Summary",
+    "pic": "/images/Image04.png",
+    "pdf": "https://documentcloud.adobe.com/view-sdk-demo/PDFs/Summary.pdf",
+    "fileName": "Summary.pdf"
+  }
+]

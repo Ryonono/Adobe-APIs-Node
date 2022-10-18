@@ -1,0 +1,61 @@
+<! html DOCTYPE>
+  <html>
+
+  <head>
+    <title>
+      <%= title %>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/css/bootstrap.min.css' />
+    <link rel='stylesheet' href='/css/font-awesome.min.css' />
+    <style type="text/css">
+      p {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+      }
+    </style>
+  </head>
+
+  <body class="m-0">
+    <div>
+      <main>
+        <div class="row">
+          <div class="col-sm-3"></div>
+          <div class="col-sm-6">
+            <h3>
+              <p class="text-center">Grow your business, establish your brand,<br />
+              </p>
+            </h3>
+            <!-- 以下の記述でPDFを呼び出しているが、状況にHardCodedではない記述にするために、<%= paper.pdf %>のようなEJS bracket syntaxを使用する -->
+            <div id="adobe-dc-view" style="width: 800px;"></div>
+            <script src="https://documentcloud.adobe.com/view-sdk/viewer.js"></script>
+            <script type="text/javascript">
+              document.addEventListener("adobe_dc_view_sdk.ready", function () {
+                var adobeDCView = new AdobeDC.View({ clientId: "<%=process.env.PDF_EMBED_CLIENT_ID %>", divId: "adobe-dc-view" });
+                adobeDCView.previewFile({
+                  content: { location: { url: "<%=paper.pdf %>" } },
+                  metaData: { fileName: "<%= paper.fileName %>" }
+                },{
+                  embedMode: "IN_LINE",
+                  showDownloadPDF: <%= permissions.showDownloadPDF %>,
+                  showPrintPDF: <%= permissions.showPrintPDF %>,
+                  showFullScreen: <%= permissions.showFullScreen %>
+                  });
+              });
+            </script>
+
+
+          </div>
+      </main>
+      <footer>
+        <div class="row">
+          <div class="col-sm-3"></div>
+          <div class="col-sm-6">
+            <p class="text-center">Bodea Inc. Your trusted partner since 2008</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    </div>
+  </body>
+
+  </html>
